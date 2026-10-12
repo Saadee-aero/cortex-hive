@@ -67,11 +67,12 @@ All numbers below come directly from the simulation output in
 Below a connectivity threshold (comm_range=1.5, average degree 6.2), the
 swarm never reaches sync. Above it, sync emerges quickly, confirming the
 expected percolation-style behavior of random geometric graphs.
+![Static swarm sync vs communication range](results/scenario2_static_sweep.png)
 
 **Degradation stress tests** (`results/stress_summary_table.txt`):
 
 - Frequency heterogeneity up to `sigma_omega = 0.10` still reaches a mean
-  r of 0.95 over the final 2 seconds, the model tolerates clock drift
+  r of 0.95 over the final 2 seconds; the model tolerates clock drift
   reasonably well on its own.
 - Communication delay is the harshest failure mode: even 2 timesteps of
   delay (0.02s) drops final r to 0.19, and none of the tested delays
@@ -86,6 +87,8 @@ expected percolation-style behavior of random geometric graphs.
   checked across three random seeds (42, 101, 2024) in
   `results/delay_recovery_multiseed_table.txt`, and while the exact eps
   where it tips varies a bit by seed, the recovery trend is consistent.
+  ![Communication delay stress test](results/stress_comm_delay.png)
+![Delay recovery vs coupling strength](results/stress_delay_recovery_eps.png)
 
 Plots for every sweep, plus a GIF of the mobile swarm converging, are in
 [`results/`](results/).
@@ -129,7 +132,7 @@ competition.
 - Syed Rayyan Bukhari
 - Aurangzeb Mughal
 
-All three Aerospace Engineering students at the Institute of Space
+All three are Aerospace Engineering students at the Institute of Space
 Technology (IST), Islamabad.
 
 ## License
