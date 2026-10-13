@@ -8,7 +8,7 @@ spiking oscillators.
 
 Most swarm robotics demos assume every agent has a GPS fix or a ground
 station broadcasting a master clock. Take that away (jammed, denied, or
-just out of range indoors) and a swarm needs some other way to agree on
+just out of range indoors), and a swarm needs some other way to agree on
 timing for coordinated maneuvers. Centralized solutions create a single
 point of failure: if the lead agent or base station goes down, the whole
 swarm loses sync.
@@ -44,7 +44,7 @@ On top of the base model, `stress_tests.py` degrades the simulation
 along three axes that matter for a real deployment: oscillator frequency
 heterogeneity (agents don't have perfectly identical internal clocks),
 communication delay (pulses don't arrive instantly), and packet loss
-(some pulses never arrive at all). A fine-grained sweep over coupling
+(some pulses never arrive). A fine-grained sweep over coupling
 strength under fixed delay was also run, across three random seeds, to
 check whether a recovery threshold held up or was just noise from a
 single run.
@@ -78,7 +78,7 @@ expected percolation-style behavior of random geometric graphs.
   delay (0.02s) drops final r to 0.19, and none of the tested delays
   from 2 to 100 steps recover sustained sync at the default coupling
   strength (eps=0.05).
-- Packet loss up to 50% barely affects final r (still 1.0000), the
+- Packet loss up to 50% barely affects final r (still 1.0000); the
   cascade mechanism is naturally redundant against dropped pulses, but
   70% loss breaks it (final r = 0.3673).
 - Raising coupling strength recovers sync under fixed delay: at
@@ -130,7 +130,7 @@ competition.
 
 - Sahad Ahmad
 - Syed Rayyan Bukhari
-- Aurangzeb Mughal
+- Aurangzaib Mughal
 
 All three are Aerospace Engineering students at the Institute of Space
 Technology (IST), Islamabad.
